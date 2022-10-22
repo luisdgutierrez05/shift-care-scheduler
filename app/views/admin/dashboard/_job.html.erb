@@ -1,0 +1,26 @@
+<div id="<%= dom_id job %>">
+  <p>
+    <strong>Status:</strong>
+    <%= job.status.titleize %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= job.description %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= job.date %>
+  </p>
+
+  <p>
+    <strong>Client:</strong>
+    <%= link_to job.client_name.titleize, admin_clients_path(job.client.id) %>
+  </p>
+
+  <p>
+    <strong>Plumbers:</strong>
+    <%= plumber_links(job) %>
+  </p>
+</div>

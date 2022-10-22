@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "cf3dace7-f871-402d-8724-eae0ba19e7de",
+		"name": "Scheduler API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19907627"
+	},
+	"item": [
+		{
+			"name": "Search by date range",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"attributes\": {\n            \"plumber_id\": 2,\n            \"start_date\": \"2022-10-22\",\n            \"end_date\": \"2022-10-26\",\n            \"status\": \"pending\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update job",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/jobs/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"jobs",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,28 @@
+en:
+  models:
+    job:
+      errors:
+        date:
+          in_past: "Date can't be in the past"
+        status:
+          pending: There is a current job pending for selected client.
+  controllers:
+    clients:
+      create:
+        success: Client was successfully created.
+      update:
+        success: Client was successfully updated.
+      destroy:
+        success: Client was successfully destroyed.
+    plumbers:
+      create:
+        success: Plumber was successfully created.
+      update:
+        success: Plumber was successfully updated.
+      destroy:
+        success: Plumber was successfully destroyed.
+    jobs:
+      create:
+        success: Job was successfully created.
+  exceptions:
+    invalid_job_status: 'Status provided is invalid'

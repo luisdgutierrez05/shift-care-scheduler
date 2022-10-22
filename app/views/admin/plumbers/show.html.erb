@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @plumber %>
+<br>
+<div>
+  <%= link_to "Edit this plumber", edit_admin_plumber_path(@plumber) %> |
+  <%= link_to "Back to plumbers", admin_plumbers_path %>
+  <br>
+  <%= button_to "Destroy this plumber", admin_plumber_path(@plumber), method: :delete %>
+  <%= link_to "Back to dashboard", admin_dashboard_index_path %>
+</div>

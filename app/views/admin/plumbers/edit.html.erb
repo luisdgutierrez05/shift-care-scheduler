@@ -1,0 +1,11 @@
+<h1>Editing plumber</h1>
+
+<%= render "form", plumber: @plumber %>
+
+<br>
+
+<div>
+  <%= link_to "Show this plumber", admin_plumber_path(@plumber) %>
+  <%= link_to "Back to plumbers", admin_plumbers_path %>
+  <%= link_to "Back to dashboard", admin_dashboard_index_path %>
+</div>

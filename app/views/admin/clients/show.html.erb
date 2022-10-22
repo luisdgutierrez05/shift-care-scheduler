@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @client %>
+<br>
+<div>
+  <%= link_to "Edit this client", edit_admin_client_path(@client) %>
+  <%= link_to "Back to clients", admin_clients_path %>
+  <br>
+  <%= button_to "Destroy this client", admin_client_path(@client), method: :delete %>
+  <%= link_to "Back to dashboard", admin_dashboard_index_path %>
+</div>

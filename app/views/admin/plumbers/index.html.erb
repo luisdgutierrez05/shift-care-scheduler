@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Plumbers</h1>
+
+<div id="plumbers">
+  <% @plumbers.each do |plumber| %>
+    <%= render plumber %>
+    <p>
+      <%= link_to plumber.name, admin_plumber_path(plumber) %>
+    </p>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to "New plumber", new_admin_plumber_path %>
+<%= link_to "Back to dashboard", admin_dashboard_index_path %>

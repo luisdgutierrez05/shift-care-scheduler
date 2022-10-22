@@ -1,0 +1,23 @@
+<h1>Welcome to ShiftCare Scheduler</h1>
+
+<%- if current_user %>
+  <h2>Currently allocated jobs</h2>
+
+  <div id="job-list">
+    <% @jobs.each do |job| %>
+      <%= render partial: 'admin/dashboard/job', locals: { job: job } %>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div id="links">
+    <%= link_to 'Add Plumber', new_admin_plumber_path %>
+    <%= link_to 'Add Client', new_admin_client_path %>
+    <%= link_to 'Add Job', new_admin_job_path %>
+  </div>
+  <br>
+  <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign in', new_user_session_path %>
+<% end %>
