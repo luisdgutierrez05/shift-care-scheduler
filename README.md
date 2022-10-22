@@ -69,7 +69,7 @@ URL: http://localhost:3000/api/v1/jobs/2
 Headers: 'Content-Type': 'application/vnd.api+json'
 Body params: {}
 ```
-Response sample: [link](postman/response-samples/jobs/per_year/update.json)
+Response sample: [link](postman/response-samples/jobs/update.json)
 
 ## Author
 
