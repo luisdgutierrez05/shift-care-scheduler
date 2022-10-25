@@ -4,8 +4,6 @@ en:
       errors:
         date:
           in_past: "Date can't be in the past"
-        status:
-          pending: There is a current job pending for selected client.
   controllers:
     clients:
       create:

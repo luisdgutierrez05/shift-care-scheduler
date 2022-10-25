@@ -11,7 +11,7 @@ module Admin
       @job = Job.new(job_params)
 
       if @job.save
-        redirect_to admin_dashboard_index_path, notice: I18n.t('controllers.jobs.create.success')
+        redirect_to admin_dashboard_index_url, notice: I18n.t('controllers.jobs.create.success')
       else
         render :new, status: :unprocessable_entity
       end

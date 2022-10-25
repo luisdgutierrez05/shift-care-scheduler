@@ -6,7 +6,7 @@ module Api
       before_action :find_job, only: %i[update]
 
       def index
-        jobs = JobsFilterService.new(job_params).call
+        jobs = ::JobsFilterService.new(job_params).call
         json_response(jobs, :ok)
       end
 

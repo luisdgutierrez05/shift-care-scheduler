@@ -8,15 +8,13 @@ module Admin
       @plumbers = Plumber.all
     end
 
-    def show
-    end
+    def show; end
 
     def new
       @plumber = Plumber.new
     end
 
-    def edit
-    end
+    def edit; end
 
     def create
       @plumber = Plumber.new(plumber_params)
@@ -30,7 +28,7 @@ module Admin
 
     def update
       if @plumber.update(plumber_params)
-        redirect_to plumber_url(@plumber), notice: I18n.t('controllers.plumbers.update.success')
+        redirect_to admin_plumber_url(@plumber), notice: I18n.t('controllers.plumbers.update.success')
       else
         render :edit, status: :unprocessable_entity
       end

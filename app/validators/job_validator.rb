@@ -7,27 +7,17 @@ class JobValidator < ActiveModel::Validator
   def validate(record)
     @record = record
 
-    current_date_in_prenset_day?
-    no_job_pending?
+    current_date_is_prenset_day?
   end
 
   private
 
   # Validates if date is in the past
   # @returns [Boolean] true/false
-  def current_date_in_prenset_day?
+  def current_date_is_prenset_day?
     return true if @record.date.present? && @record.date >= Date.today
 
     error_message = I18n.t('models.job.errors.date.in_past')
-    add_error_record(error_message)
-  end
-
-  # Validates if there is a current job pending
-  # @returns [Boolean] true/false
-  def no_job_pending?
-    return true if @record.client&.pending_jobs&.empty?
-
-    error_message = I18n.t('models.job.errors.status.pending')
     add_error_record(error_message)
   end
 
