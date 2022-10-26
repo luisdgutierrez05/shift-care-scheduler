@@ -31,7 +31,7 @@ RSpec.describe Job, type: :model do
       end
 
       context 'when date is not present day' do
-        let(:job) { build(:job, date: Time.zone.today - 1.days, client: client) }
+        let(:job) { build(:job, date: Date.today - 1.days, client: client) }
 
         it 'returns false' do
           expect(job.valid?).to be_falsey

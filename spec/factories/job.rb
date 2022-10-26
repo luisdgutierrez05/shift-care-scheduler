@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :job do
     status { :pending }
     description { Faker::Marketing.buzzwords }
-    date { Time.zone.today + 1.days }
+    date { Date.today + 1.days }
     association(:client)
 
     trait :with_plumber do
@@ -21,6 +21,10 @@ FactoryBot.define do
       after(:create) do |job, options|
         job.plumbers << options.plumber
       end
+    end
+
+    trait :with_status_done do
+      status { :done }
     end
   end
 end

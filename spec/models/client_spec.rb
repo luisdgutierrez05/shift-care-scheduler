@@ -29,8 +29,8 @@ RSpec.describe Client, type: :model do
 
       context 'when Client have pending jobs' do
         let(:job_one) { create(:job, :with_plumber, client: client) }
-        let(:job_two) { create(:job, :with_plumber, client: client, date: Time.zone.today.end_of_month) }
-        let(:job_three) { create(:job, :with_plumber, client: client, date: Time.zone.today + 2.months) }
+        let(:job_two) { create(:job, :with_plumber, client: client, date: Date.today.end_of_month) }
+        let(:job_three) { create(:job, :with_plumber, client: client, date: Date.today + 2.months) }
 
         it 'returns a list of pending jobs' do
           job_list = [job_one, job_two, job_three]
@@ -40,7 +40,7 @@ RSpec.describe Client, type: :model do
 
       context 'when Client does not have pending jobs' do
         let(:job) do
-          build(:job, :with_plumber, client: client, date: Time.zone.today - 2.days, status: :done)
+          build(:job, :with_plumber, client: client, date: Date.today - 2.days, status: :done)
             .tap { |job| job.save(validate: false) }
         end
 

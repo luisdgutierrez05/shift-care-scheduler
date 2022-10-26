@@ -34,8 +34,8 @@ RSpec.describe JobsFilterService, type: :service do
       context 'with date range' do
         let(:filter_params) do
           {
-            start_date: Time.zone.today + 2.days,
-            end_date: Time.zone.today + 2.days
+            start_date: Date.today + 2.days,
+            end_date: Date.today + 2.days
           }
         end
 
@@ -47,8 +47,8 @@ RSpec.describe JobsFilterService, type: :service do
       context 'with no plumber param' do
         let(:filter_params) do
           {
-            start_date: Time.zone.today,
-            end_date: Time.zone.today + 2.days,
+            start_date: Date.today,
+            end_date: Date.today + 2.days,
             status: 'pending'
           }
         end

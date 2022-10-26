@@ -30,7 +30,7 @@ RSpec.describe Admin::JobsController, type: :controller do
         {
           job: {
             description: 'Back yard issued reported with pests',
-            date: Time.zone.today,
+            date: Date.today,
             client_id: client.id,
             plumber_ids: plumbers.pluck(:id)
           }

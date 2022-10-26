@@ -11,7 +11,7 @@ FactoryBot.define do
     trait :with_two_pending_jobs do
       after(:create) do |client|
         2.times do |n|
-          new_date = Time.zone.today + (n+1).days
+          new_date = Date.today + (n+1).days
           client.jobs << create(:job, :with_plumber, client: client, date: new_date)
         end
       end

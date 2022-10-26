@@ -18,7 +18,7 @@ module ExceptionHandler
     # JSON response with message; Status code 400 - Bad request
     def bad_request(error)
       details = { status: 400, error: 'Bad request', message: error.message }
-      json_response(details, :invalid_request)
+      json_response(details, :bad_request)
     end
 
     # JSON response with message; Status code 401 - Unauthorized

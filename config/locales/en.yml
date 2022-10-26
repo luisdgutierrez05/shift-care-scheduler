@@ -24,3 +24,4 @@ en:
         success: Job was successfully created.
   exceptions:
     invalid_job_status: 'Status provided is invalid'
+    invalid_route: 'Invalid route'
